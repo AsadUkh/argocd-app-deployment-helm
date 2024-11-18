@@ -1,0 +1,37 @@
+secure-java21-gsm-api-c1:
+  replica: 2
+  image: asadullahkhan/java-21-gsm-app
+  tag: 1
+  release: master
+  repoURL: https://github.com/AsadUkh/secure-java21-gsm-api-helm.git
+  server: "https://kubernetes.default.svc"
+  namespace: apps
+  project: test
+  valueFile: values.yaml
+app-1:
+  replica: 1
+  image: 0.244.4
+  release: master
+  repoURL: https://github.com/AsadUkh/frontend-helm.git
+  server: "https://kubernetes.default.svc"
+  namespace: apps
+  project: test
+  valueFile: values.yaml
+app-2:
+  replica: 1
+  image: asadullahkhan/poc-backend:v1
+  release: master
+  repoURL: https://github.com/AsadUkh/backend-helm.git
+  server: "https://kubernetes.default.svc"
+  namespace: apps
+  project: test
+  valueFile: values.yaml
+app-3:
+  replica: 1
+  image: asadullahkhan/poc-backend:v1
+  release: master
+  repoURL: https://github.com/AsadUkh/backend-helm.git
+  server: "https://kubernetes.default.svc"
+  namespace: apps
+  project: test
+  valueFile: values.yaml

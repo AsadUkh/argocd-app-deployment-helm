@@ -1,0 +1,10 @@
+secure-java21-gsm-api-e4:
+  replica: 1
+  image: asadullahkhan/java-21-gsm-app
+  tag: 1
+  release: master
+  repoURL: https://github.com/AsadUkh/secure-java21-gsm-api-helm.git
+  serverr: "https://34.150.182.163"
+  namespace: apps
+  project: test
+  valueFile: values.yaml

@@ -1,0 +1,21 @@
+{{- range $appName, $appConfig := .Values }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $appName }}
+  namespace: argocd
+spec:
+  project: {{ $appConfig.project }}
+  source:
+    repoURL: {{ $appConfig.repoURL }}
+    targetRevision: {{ $appConfig.release }}
+    path: '.'
+    helm:
+      valueFiles:
+        - {{ $appConfig.valueFile }}
+      releaseName: {{ $appConfig.release }}
+  destination:
+    server: {{ $appConfig.server }}
+    namespace: {{ $appConfig.namespace }}
+{{- end }}
